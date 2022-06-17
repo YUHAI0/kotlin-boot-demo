@@ -1,6 +1,10 @@
 package com.example.demo.repo
 
-import com.example.demo.entity.User
+import com.example.demo.entity.UserProfile
 import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.repository.CrudRepository
+import org.springframework.data.rest.core.annotation.RepositoryRestResource
 
-interface UserRepository : JpaRepository<User, Long>
+@RepositoryRestResource(collectionResourceRel = "user", path = "user")
+interface UserRepository : CrudRepository<UserProfile, Long> {
+}
